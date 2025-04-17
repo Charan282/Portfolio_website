@@ -5,9 +5,10 @@ import { certificates, projects, education, expertise } from './data';
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
-      return document.documentElement.classList.contains('dark');
+      const stored = localStorage.getItem('darkMode');
+      return stored !== null ? JSON.parse(stored) : true; // Default to dark
     }
-    return false;
+    return true; // Default to dark mode when rendering on server
   });
 
   const [isScrolled, setIsScrolled] = useState(false); // <-- ADD THIS
