@@ -63,17 +63,33 @@ export const education = [
     degree: 'Master of Science in Data Science',
     school: 'University at Buffalo, SUNY',
     period: 'Jan 2024 - May 2025',
-    courses: ['Machine Learning', 'Statistical Data Mining', 'Python', 'SQL & Power BI']
+    courses: ["Python", "Probability"," Statistical Data Mining in R"," ML"," DL"," Tableau", "Postgres"," Matlab"]
   },
   {
     degree: 'Bachelor of Technology in Mechanical Engineering',
     school: 'Pragati Engineering College',
     period: 'Aug 2019 - May 2023',
-    courses: ['AutoCAD', 'Automation']
+    courses: ["Autocad", "C language"," Python"," Statistics"," Mathematics", "Communication Skills"]
   }
 ];
 
 export const projects = [
+  {
+  title: 'Income Demographics Pipeline (AWS)',
+  description: 'Built a full end-to-end data pipeline using Airflow, AWS S3, Snowflake, and Tableau for demographic insights. Leveraged Snowflake’s COPY INTO for automated ingestion, and Tableau for real-time dashboards with demographic filters.',
+  image: '/logos/aws_project.png', // 📌 You need to place an image named 'aws_project.png' inside public/logos
+  technologies: ['Airflow', 'AWS S3', 'Snowflake', 'Tableau', 'Python'],
+  github: 'https://github.com/Charan282/Income-Demographics-Pipeline-Airflow-S3-Snowflake-Tableau-',
+  demo: null
+  },
+  {
+  title: 'Income Demographics Pipeline (Azure)',
+  description: 'Developed a scalable Azure data engineering pipeline using ADF, ADLS Gen2, Databricks, and Synapse SQL. Used PySpark transformations, created Gold Layer external tables, and built Power BI dashboards with dynamic filtering.',
+  image: '/logos/azure_project.png', // 📌 You need to place an image named 'azure_project.png' inside public/logos
+  technologies: ['Azure Data Factory', 'ADLS Gen2', 'Databricks', 'Synapse', 'Power BI'],
+  github: 'https://github.com/Charan282/Income-Demographics-Pipeline-Airflow-S3-Snowflake-Tableau-', // Same repo — used both cloud versions
+  demo: null
+  },
   {
     title: 'API Gateway Project',
     description: 'REST API using AWS API Gateway with Lambda proxy integration',
@@ -128,3 +144,24 @@ export const certificates = [
     link: 'https://learn.microsoft.com/en-us/users/srinagacharangampala-1963/credentials/824251c6f766b3b6'
   }
 ];
+
+
+export const workExperienceData = [
+  {
+    role: 'Data Engineer',
+    company: 'Fission Labs',
+    duration: 'November 2022 - December 2023',
+    description: `Developing an end-to-end data pipeline using the various given datasets with Airflow, AWS S3, Snowflake, and Tableau. Cleaned and encoded data in Python and automated ingestion via Airflow.  Automating ingestion and transformation using Snowflake’s COPY INTO, handled schema mismatches and role access issues. Live Tableau dashboard with demographic filters, and Integrating Python preprocessing, Snowflake SQL for labeled views, and Tableau live connection for real-time demographic visualizations.`,
+    logo: '/logos/fission_labs_logo.jpg', // Make sure this name and extension match the file
+  },
+  {
+    role: 'Data Engineer Intern',
+    company: 'Jar',
+    duration: 'January 2022 - November 2022',
+    description: `We needed to build a full-scale Azure Data Engineering pipeline for datasets using Azure Data Factory, ADLS Gen2, Databricks, and Synapse SQL. Used PySpark transformations and Parquet format to optimize data retrieval, achieving 65% faster query times. Have to build Gold Layer external tables with OPENROWSET/CETAS in Synapse. Created Power BI dashboards with filters on Territory and Order Date. And also implementing parameterized pipelines reducing manual efforts by 90%.`,
+    logo: '/logos/jar-app.png', // Make sure this file exists in public/logos
+  },
+];
+
+
+
