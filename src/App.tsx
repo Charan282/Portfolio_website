@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Phone, MapPin, Download, ExternalLink, Moon, Sun } from 'lucide-react';
 import { certificates, projects, education, expertise } from './data';
+import { workExperienceData } from './data';
+
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -10,6 +12,7 @@ function App() {
     }
     return true; // Default to dark mode when rendering on server
   });
+  
 
   const [isScrolled, setIsScrolled] = useState(false); // <-- ADD THIS
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
@@ -63,6 +66,7 @@ function App() {
     {[
       { label: 'Home', href: '#home' },
       { label: 'About', href: '#about' },
+      { label: 'Work Experience', href: '#workexperience' },
       { label: 'Education', href: '#education' },
       { label: 'Expertise', href: '#expertise' },
       { label: 'Projects', href: '#projects' },
@@ -111,27 +115,30 @@ function App() {
             </a>
           </div>
           <nav className="flex flex-wrap gap-6 justify-center">
-            {['Education', 'Expertise', 'Projects', 'Certifications'].map((item) => (
-              <a key={item} href={`#${item.toLowerCase()}`} className="text-white text-2xl hover:text-blue-400 transition">{item}</a>
-            ))}
+            {['Work Experience', 'Education', 'Expertise', 'Projects', 'Certifications'].map((item) => (
+  <a key={item} href={`#${item.toLowerCase().replace(/\s+/g, '')}`} className="...">{item}</a>
+))}
           </nav>
+
         </div>
       </header>
 
+      
       {/* About Section */}
-      <section id="about" className="py-20 dark:text-white">
+      <section id="about" className="py-20 bg-gray-900 dark:bg-gray-800 text-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">About Me</h2>
           <div className="flex flex-col md:flex-row items-center md:items-start gap-10 max-w-5xl mx-auto text-center md:text-left">
           
             {/* Left: Profile Image */}
-            <div className="w-[190px] h-[190px] md:w-[150px] md:h-[150px] sm:w-[100px] sm:h-[100px] rounded-full overflow-hidden border-4 border-gray-300 shadow-lg">
-            <img 
-              src="/logos/profile.jpg" 
-              alt="Profile" 
-              className="w-full h-full object-cover"
-            />
-            </div>
+            <div className="w-[200px] h-[200px] rounded-full overflow-hidden border-4 border-gray-300 shadow-lg">
+  <img 
+    src="/logos/profile.jpg" 
+    alt="Profile" 
+    className="h-full w-full object-cover"
+  />
+</div>
+
 
             {/* Right: About Info */}
             <div className="max-w-3xl">
@@ -172,35 +179,60 @@ function App() {
         </div>
       </section>
 
+      
+     {/* Work Experience Section */}
+<section id="workexperience" className="py-20 bg-gray-100 dark:bg-gray-900 text-black dark:text-white">
+  <h2 className="text-3xl font-bold text-white mb-12 text-center">Work Experience</h2>
+
+  <div className="space-y-10 max-w-5xl mx-auto px-4">
+    {workExperienceData.map((job, index) => (
+      <div key={index} className="bg-gray-800 p-6 rounded-xl shadow-lg text-white">
+        <div className="flex items-center gap-4 mb-4">
+          <img src={job.logo} alt={`${job.company} Logo`} className="h-12 w-12 object-cover rounded-md" />
+          <div>
+            <h3 className="text-xl font-semibold">{job.role} - {job.company}</h3>
+            <p className="text-sm text-gray-400">{job.duration}</p>
+          </div>
+        </div>
+        <p className="text-gray-300">{job.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+
+
       {/* Education Section */}
-      <section id="education" className="py-20 bg-gray-100 dark:bg-gray-700 dark:text-white">
+<section id="education" className="py-20 bg-white dark:bg-gray-800 text-black dark:text-white">
+
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">Education</h2>
           <div className="relative border-l-4 border-blue-500 dark:border-blue-400 max-w-3xl mx-auto">
             
             {/* University at Buffalo */}
             <div className="mb-10 ml-6 relative">
-              <div className="absolute -left-8 top-2 w-8 h-8 flex items-center justify-center bg-blue-500 dark:bg-blue-400 text-white rounded-full shadow-lg">
-                🎓
-              </div>
+            <div className="absolute -left-8 top-2 w-8 h-8 flex items-center justify-center rounded-full overflow-hidden shadow-lg bg-white">
+                <img src="/logos/UB.jpg" alt="UB Logo" className="object-contain w-full h-full" />
+            </div>
+
               <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
                 <h3 className="text-2xl font-semibold text-blue-600 dark:text-blue-400">University at Buffalo, SUNY</h3>
                 <p className="text-lg text-gray-700 dark:text-gray-300">Master of Science in Data Science</p>
                 <p className="text-md text-gray-600 dark:text-gray-400">Jan 2024 - May 2025</p>
-                <p className="text-md mt-2">Relevant Coursework: Machine Learning, Statistical Data Mining, Python, SQL & Power BI</p>
+                <p className="text-md mt-2">Relevant Coursework: Python, Probability, Statistical Data Mining in R, ML, DL, Tableau, Postgres, Matlab</p>
               </div>
             </div>
 
             {/* Pragati Engineering College */}
             <div className="ml-6 relative">
               <div className="absolute -left-8 top-2 w-8 h-8 flex items-center justify-center bg-blue-500 dark:bg-blue-400 text-white rounded-full shadow-lg">
-                🏛️
+                <img src="/logos/pragati.jpg" alt="pragati Logo" className="object-contain w-full h-full" />
               </div>
               <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
                 <h3 className="text-2xl font-semibold text-blue-600 dark:text-blue-400">Pragati Engineering College</h3>
                 <p className="text-lg text-gray-700 dark:text-gray-300">Bachelor of Technology in Mechanical Engineering</p>
                 <p className="text-md text-gray-600 dark:text-gray-400">Aug 2019 - May 2023</p>
-                <p className="text-md mt-2">Relevant Coursework: AutoCAD, Automation</p>
+                <p className="text-md mt-2">Relevant Coursework: Autocad, C language, Python, Statistics, Mathematics, Communication Skills</p>
               </div>
             </div>
 
