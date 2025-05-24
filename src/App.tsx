@@ -110,7 +110,7 @@ function App() {
           <p className="text-3xl md:text-xl sm:text-lg mb-8">Data & Cloud Portfolio</p>
           <div className="flex flex-col md:flex-row gap-4 justify-center mb-10">
             <a href="#contact" className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full font-semibold text-xl transition">Hire Me</a>
-            <a href="https://drive.google.com/file/d/1Oirj2Rzxfxs4ujlgM0XshaTM04uS6Wc2/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="bg-transparent border-2 border-white hover:bg-white hover:text-black px-8 py-3 rounded-full font-semibold text-xl transition flex items-center gap-2">
+            <a href="https://drive.google.com/file/d/16N9GTtNZZROk7N_cy9geZUZduwytEhCF/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="bg-transparent border-2 border-white hover:bg-white hover:text-black px-8 py-3 rounded-full font-semibold text-xl transition flex items-center gap-2">
               <Download size={32} /> Download Resume
             </a>
           </div>
