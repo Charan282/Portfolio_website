@@ -77,7 +77,7 @@ export const projects = [
   {
   title: 'Income Demographics Pipeline (AWS)',
   description: 'Built a full end-to-end data pipeline using Airflow, AWS S3, Snowflake, and Tableau for demographic insights. Leveraged Snowflake’s COPY INTO for automated ingestion, and Tableau for real-time dashboards with demographic filters.',
-  image: '/logos/aws_project.png', // 📌 You need to place an image named 'aws_project.png' inside public/logos
+  image: '/logos/aws_pipeline.png', // 📌 You need to place an image named 'aws_project.png' inside public/logos
   technologies: ['Airflow', 'AWS S3', 'Snowflake', 'Tableau', 'Python'],
   github: 'https://github.com/Charan282/Income-Demographics-Pipeline-Airflow-S3-Snowflake-Tableau-',
   demo: null
@@ -85,7 +85,7 @@ export const projects = [
   {
   title: 'Income Demographics Pipeline (Azure)',
   description: 'Developed a scalable Azure data engineering pipeline using ADF, ADLS Gen2, Databricks, and Synapse SQL. Used PySpark transformations, created Gold Layer external tables, and built Power BI dashboards with dynamic filtering.',
-  image: '/logos/azure_project.png', // 📌 You need to place an image named 'azure_project.png' inside public/logos
+  image: '/logos/azure_pipeline.png', // 📌 You need to place an image named 'azure_project.png' inside public/logos
   technologies: ['Azure Data Factory', 'ADLS Gen2', 'Databricks', 'Synapse', 'Power BI'],
   github: 'https://github.com/Charan282/Income-Demographics-Pipeline-Airflow-S3-Snowflake-Tableau-', // Same repo — used both cloud versions
   demo: null
